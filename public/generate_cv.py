@@ -46,6 +46,15 @@ EDUCATION = [
 ]
 
 
+COURSEWORK = [
+    "ELEG479, Introduction to Biomedical Imaging - A",
+    "ELEG467, Introduction to Computational Methods - A",
+    "MATH426, Computational Mathematics - In Progress",
+    "MATH503, Complex Analysis - In Progress",
+    "MATH508, Advanced Calculus with Nonlinear Dynamics - In Progress",
+]
+
+
 EXPERIENCE = [
     {
         "role": "Undergraduate Researcher",
@@ -231,6 +240,7 @@ def render_cv() -> str:
     awards_html = "\n".join(f"<li>{esc(award)}</li>" for award in AWARDS)
     affiliations_html = "\n".join(f"<li>{esc(item)}</li>" for item in AFFILIATIONS)
     skills_html = "\n".join(f"<li>{esc(skill)}</li>" for skill in SKILLS)
+    coursework_html = "\n".join(f"<li>{esc(course)}</li>" for course in COURSEWORK)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -410,6 +420,11 @@ def render_cv() -> str:
     <section>
       <h2>Education</h2>
       {education_html}
+    </section>
+
+    <section>
+      <h2>Selected Coursework</h2>
+      <ul>{coursework_html}</ul>
     </section>
 
     <section>
